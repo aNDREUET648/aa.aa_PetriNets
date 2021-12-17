@@ -8,7 +8,7 @@ Versió Windows pipe.bat
 Versió linux pipe.sh
 
 
-Descarregat de [mifs.uib.cat](http://http://mifs.uib.cat/) a s'opció Tools
+Descarregat de [mifs.uib.cat](http://mifs.uib.cat/) a s'opció Tools
 
 ---
 
