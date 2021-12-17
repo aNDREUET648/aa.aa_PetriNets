@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<labels x="391" y="22" width="149" height="21" border="true">
+<text>Productor - Consumidor</text>
+</labels>
+<labels x="329" y="61" width="284" height="20" border="true">
+<text>Productor deixa 3 objectes i consumidors reben 2</text>
+</labels>
+<place id="Canal">
+<graphics>
+<position x="448.75" y="223.75"/>
+</graphics>
+<name>
+<value>Canal</value>
+<graphics>
+<offset x="31.666666666666675" y="44.3333333333333"/>
+</graphics>
+</name>
+<initialMarking>
+<value>3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>10</value>
+</capacity>
+</place>
+<place id="Consumidors poden consumir">
+<graphics>
+<position x="710.625" y="343.125"/>
+</graphics>
+<name>
+<value>Consumidors poden consumir</value>
+<graphics>
+<offset x="96.54166666666667" y="44.374999999999986"/>
+</graphics>
+</name>
+<initialMarking>
+<value>2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Consumidors poden rebre">
+<graphics>
+<position x="710.625" y="135.0"/>
+</graphics>
+<name>
+<value>Consumidors poden rebre</value>
+<graphics>
+<offset x="93.375" y="-24.874999999999986"/>
+</graphics>
+</name>
+<initialMarking>
+<value>1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Productors poden entregar">
+<graphics>
+<position x="176.25" y="140.625"/>
+</graphics>
+<name>
+<value>Productors poden entregar</value>
+<graphics>
+<offset x="105.625" y="-19.5"/>
+</graphics>
+</name>
+<initialMarking>
+<value>2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Productors poden produir">
+<graphics>
+<position x="176.25" y="335.625"/>
+</graphics>
+<name>
+<value>Productors poden produir</value>
+<graphics>
+<offset x="85.5" y="40.25"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="Consumir">
+<graphics>
+<position x="840.0" y="225.0"/>
+</graphics>
+<name>
+<value>Consumir</value>
+<graphics>
+<offset x="55.20833333333334" y="-39.20833333333335"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Entregar">
+<graphics>
+<position x="301.875" y="225.0"/>
+</graphics>
+<name>
+<value>Entregar</value>
+<graphics>
+<offset x="46.25" y="-34.375"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Produir">
+<graphics>
+<position x="60.0" y="225.0"/>
+</graphics>
+<name>
+<value>Produir</value>
+<graphics>
+<offset x="36.25" y="-33.125"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Rebre">
+<graphics>
+<position x="592.5" y="225.0"/>
+</graphics>
+<name>
+<value>Rebre</value>
+<graphics>
+<offset x="24.58333333333324" y="-35.75000000000006"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Canal to Rebre" source="Canal" target="Rebre">
+<graphics/>
+<inscription>
+<value>2</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="475" y="236" curvePoint="false"/>
+<arcpath id="001" x="599" y="238" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Consumidors poden consumir to Consumir" source="Consumidors poden consumir" target="Consumir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="733" y="345" curvePoint="false"/>
+<arcpath id="001" x="846" y="243" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Consumidors poden rebre to Rebre" source="Consumidors poden rebre" target="Rebre">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="710" y="156" curvePoint="false"/>
+<arcpath id="001" x="610" y="232" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Consumir to Consumidors poden rebre" source="Consumir" target="Consumidors poden rebre">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="847" y="233" curvePoint="false"/>
+<arcpath id="001" x="735" y="155" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Entregar to Canal" source="Entregar" target="Canal">
+<graphics/>
+<inscription>
+<value>3</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="318" y="237" curvePoint="false"/>
+<arcpath id="001" x="446" y="236" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Entregar to Productors poden produir" source="Entregar" target="Productors poden produir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="308" y="243" curvePoint="false"/>
+<arcpath id="001" x="200" y="338" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Productors poden entregar to Entregar" source="Productors poden entregar" target="Entregar">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="201" y="161" curvePoint="false"/>
+<arcpath id="001" x="309" y="233" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Productors poden produir to Produir" source="Productors poden produir" target="Produir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="177" y="337" curvePoint="false"/>
+<arcpath id="001" x="76" y="242" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Produir to Productors poden entregar" source="Produir" target="Productors poden entregar">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="77" y="232" curvePoint="false"/>
+<arcpath id="001" x="176" y="161" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Rebre to Consumidors poden consumir" source="Rebre" target="Consumidors poden consumir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="609" y="242" curvePoint="false"/>
+<arcpath id="001" x="711" y="345" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
