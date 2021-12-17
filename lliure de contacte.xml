@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<labels x="412" y="56" width="261" height="36" border="true">
+<text>Lliure Contacte?
+Afegeix els complementaris que facin falta</text>
+</labels>
+<labels x="458" y="20" width="149" height="21" border="true">
+<text>Productor - Consumidor</text>
+</labels>
+<place id="Canal">
+<graphics>
+<position x="502.1428571428571" y="158.92857142857144"/>
+</graphics>
+<name>
+<value>Canal</value>
+<graphics>
+<offset x="29.66666666666667" y="-27.1666666666667"/>
+</graphics>
+</name>
+<initialMarking>
+<value>3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>10</value>
+</capacity>
+</place>
+<place id="COMPLEMENTARI Canal">
+<graphics>
+<position x="498.9285714285714" y="483.2142857142858"/>
+</graphics>
+<name>
+<value>COMPLEMENTARI Canal</value>
+<graphics>
+<offset x="97.42857142857137" y="45.64285714285715"/>
+</graphics>
+</name>
+<initialMarking>
+<value>7</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="COMPLEMENTARI Consumidors poden rebre">
+<graphics>
+<position x="828.5714285714288" y="325.0"/>
+</graphics>
+<name>
+<value>COMPLEMENTARI Consumidors poden rebre</value>
+<graphics>
+<offset x="147.85714285714286" y="40.92857142857142"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>1</value>
+</capacity>
+</place>
+<place id="Consumidors poden consumir">
+<graphics>
+<position x="816.4285714285716" y="490.7142857142858"/>
+</graphics>
+<name>
+<value>Consumidors poden consumir</value>
+<graphics>
+<offset x="101.83333333333331" y="46.166666666666636"/>
+</graphics>
+</name>
+<initialMarking>
+<value>2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Consumidors poden rebre">
+<graphics>
+<position x="817.8571428571428" y="162.1428571428572"/>
+</graphics>
+<name>
+<value>Consumidors poden rebre</value>
+<graphics>
+<offset x="98.14285714285711" y="-22.857142857142854"/>
+</graphics>
+</name>
+<initialMarking>
+<value>1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>1</value>
+</capacity>
+</place>
+<place id="Productors poden entregar">
+<graphics>
+<position x="209.99999999999997" y="163.92857142857144"/>
+</graphics>
+<name>
+<value>Productors poden entregar</value>
+<graphics>
+<offset x="96.99999999999982" y="-16.666666666666643"/>
+</graphics>
+</name>
+<initialMarking>
+<value>2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Productors poden produir">
+<graphics>
+<position x="209.99999999999997" y="485.7142857142858"/>
+</graphics>
+<name>
+<value>Productors poden produir</value>
+<graphics>
+<offset x="107.6666666666667" y="47.33333333333336"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="Consumir">
+<graphics>
+<position x="1002.1428571428572" y="323.5714285714286"/>
+</graphics>
+<name>
+<value>Consumir</value>
+<graphics>
+<offset x="43.33333333333336" y="-45.66666666666666"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Entregar">
+<graphics>
+<position x="359.99999999999994" y="323.5714285714286"/>
+</graphics>
+<name>
+<value>Entregar</value>
+<graphics>
+<offset x="43.33333333333331" y="-50.00000000000001"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Produir">
+<graphics>
+<position x="52.85714285714281" y="323.5714285714286"/>
+</graphics>
+<name>
+<value>Produir</value>
+<graphics>
+<offset x="35.0" y="-39.99999999999994"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Rebre">
+<graphics>
+<position x="637.857142857143" y="323.5714285714286"/>
+</graphics>
+<name>
+<value>Rebre</value>
+<graphics>
+<offset x="35.499999999999915" y="-47.3333333333334"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Canal Lliure to Entregar" source="COMPLEMENTARI Canal" target="Entregar">
+<graphics/>
+<inscription>
+<value>3</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="501" y="483" curvePoint="false"/>
+<arcpath id="001" x="376" y="340" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Canal to Rebre" source="Canal" target="Rebre">
+<graphics/>
+<inscription>
+<value>2</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="523" y="182" curvePoint="false"/>
+<arcpath id="001" x="644" y="330" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Consumidors no poden rebre to Consumir" source="COMPLEMENTARI Consumidors poden rebre" target="Consumir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="855" y="336" curvePoint="false"/>
+<arcpath id="001" x="1008" y="336" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Consumidors poden consumir to Consumir" source="Consumidors poden consumir" target="Consumir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="839" y="492" curvePoint="false"/>
+<arcpath id="001" x="1008" y="344" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Consumidors poden rebre to Rebre" source="Consumidors poden rebre" target="Rebre">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="818" y="183" curvePoint="false"/>
+<arcpath id="001" x="654" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Consumir to Consumidors poden rebre" source="Consumir" target="Consumidors poden rebre">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1009" y="330" curvePoint="false"/>
+<arcpath id="001" x="840" y="183" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Entregar to Canal" source="Entregar" target="Canal">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="376" y="330" curvePoint="false"/>
+<arcpath id="001" x="504" y="182" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Entregar to Productors poden produir" source="Entregar" target="Productors poden produir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="366" y="340" curvePoint="false"/>
+<arcpath id="001" x="232" y="486" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Productors poden entregar to Entregar" source="Productors poden entregar" target="Entregar">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="232" y="186" curvePoint="false"/>
+<arcpath id="001" x="366" y="330" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Productors poden produir to Produir" source="Productors poden produir" target="Produir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="211" y="486" curvePoint="false"/>
+<arcpath id="001" x="69" y="340" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Produir to Productors poden entregar" source="Produir" target="Productors poden entregar">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="70" y="330" curvePoint="false"/>
+<arcpath id="001" x="211" y="186" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Rebre to Canal Lliure" source="Rebre" target="COMPLEMENTARI Canal">
+<graphics/>
+<inscription>
+<value>2</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="644" y="340" curvePoint="false"/>
+<arcpath id="001" x="520" y="483" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Rebre to Consumidors no poden rebre" source="Rebre" target="COMPLEMENTARI Consumidors poden rebre">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="654" y="334" curvePoint="false"/>
+<arcpath id="001" x="825" y="336" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Rebre to Consumidors poden consumir" source="Rebre" target="Consumidors poden consumir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="654" y="341" curvePoint="false"/>
+<arcpath id="001" x="817" y="492" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
