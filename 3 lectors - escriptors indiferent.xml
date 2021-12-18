@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<labels x="455" y="36" width="205" height="42" border="true">
+<text>3 Lectors - Escriptors indistintament
+</text>
+</labels>
+<place id="Claus disponibles">
+<graphics>
+<position x="540.0" y="270.0"/>
+</graphics>
+<name>
+<value>Claus disponibles</value>
+<graphics>
+<offset x="73.79120879120876" y="63.29670329670335"/>
+</graphics>
+</name>
+<initialMarking>
+<value>3</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Procés escriu">
+<graphics>
+<position x="390.0" y="270.0"/>
+</graphics>
+<name>
+<value>Procés escriu</value>
+<graphics>
+<offset x="2.6923076923076916" y="-14.230769230769234"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Procés espera clau">
+<graphics>
+<position x="900.0" y="105.0"/>
+</graphics>
+<name>
+<value>Procés espera clau</value>
+<graphics>
+<offset x="74.0" y="-15.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Procés espera claus">
+<graphics>
+<position x="225.0" y="105.0"/>
+</graphics>
+<name>
+<value>Procés espera claus</value>
+<graphics>
+<offset x="76.5384615384615" y="-19.615384615384592"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Procés inactius">
+<graphics>
+<position x="546.4285714285711" y="542.1428571428572"/>
+</graphics>
+<name>
+<value>Procés inactius</value>
+<graphics>
+<offset x="59.61538461538461" y="47.307692307692264"/>
+</graphics>
+</name>
+<initialMarking>
+<value>4</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Procés llegeix">
+<graphics>
+<position x="705.0" y="270.0"/>
+</graphics>
+<name>
+<value>Procés llegeix</value>
+<graphics>
+<offset x="94.6923076923077" y="-21.923076923076916"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="Agafa clau">
+<graphics>
+<position x="705.0" y="105.0"/>
+</graphics>
+<name>
+<value>Agafa clau</value>
+<graphics>
+<offset x="22.692307692307704" y="-26.538461538461544"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Agafa claus">
+<graphics>
+<position x="390.0" y="105.0"/>
+</graphics>
+<name>
+<value>Agafa claus</value>
+<graphics>
+<offset x="34.23076923076923" y="-31.153846153846153"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Indica vol escriure">
+<graphics>
+<position x="217.85714285714366" y="537.8571428571432"/>
+</graphics>
+<name>
+<value>Indica vol escriure</value>
+<graphics>
+<offset x="45.47252747252748" y="-21.769230769230813"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Indica vol llegir">
+<graphics>
+<position x="902.1428571428572" y="537.857142857143"/>
+</graphics>
+<name>
+<value>Indica vol llegir</value>
+<graphics>
+<offset x="77.30769230769234" y="-42.69230769230767"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Torna clau">
+<graphics>
+<position x="705.0" y="402.8571428571429"/>
+</graphics>
+<name>
+<value>Torna clau</value>
+<graphics>
+<offset x="46.5384615384615" y="46.5384615384615"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Torna claus">
+<graphics>
+<position x="389.99999999999994" y="402.8571428571429"/>
+</graphics>
+<name>
+<value>Torna claus</value>
+<graphics>
+<offset x="46.21978021978015" y="42.30769230769227"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Agafa claus to Procés escriu" source="Agafa claus" target="Procés escriu">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="402" y="132" curvePoint="false"/>
+<arcpath id="001" x="402" y="267" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Agafa clau to P4" source="Agafa clau" target="Procés llegeix">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="717" y="132" curvePoint="false"/>
+<arcpath id="001" x="717" y="267" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Claus disponibles to Agafa clau" source="Claus disponibles" target="Agafa clau">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="562" y="270" curvePoint="false"/>
+<arcpath id="001" x="711" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Claus disponibles to Agafa claus" source="Claus disponibles" target="Agafa claus">
+<graphics/>
+<inscription>
+<value>3</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="542" y="270" curvePoint="false"/>
+<arcpath id="001" x="406" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Indica vol escriure to Procés espera claus" source="Indica vol escriure" target="Procés espera claus">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="230" y="535" curvePoint="false"/>
+<arcpath id="001" x="236" y="131" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 to Agafa clau" source="Procés espera clau" target="Agafa clau">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="897" y="117" curvePoint="false"/>
+<arcpath id="001" x="721" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P4 to Torna clau" source="Procés llegeix" target="Torna clau">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="717" y="296" curvePoint="false"/>
+<arcpath id="001" x="717" y="399" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P5 to T5" source="Procés inactius" target="Indica vol llegir">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="572" y="553" curvePoint="false"/>
+<arcpath id="001" x="908" y="550" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Procés escriu to Torna claus" source="Procés escriu" target="Torna claus">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="402" y="296" curvePoint="false"/>
+<arcpath id="001" x="402" y="399" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Procés espera claus to Agafa claus" source="Procés espera claus" target="Agafa claus">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="251" y="117" curvePoint="false"/>
+<arcpath id="001" x="396" y="117" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Procés inactius to Indica vol escriure" source="Procés inactius" target="Indica vol escriure">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="543" y="553" curvePoint="false"/>
+<arcpath id="001" x="234" y="550" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T5 to P3" source="Indica vol llegir" target="Procés espera clau">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="914" y="535" curvePoint="false"/>
+<arcpath id="001" x="912" y="131" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Torna claus to Claus disponibles" source="Torna claus" target="Claus disponibles">
+<graphics/>
+<inscription>
+<value>3</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="407" y="409" curvePoint="false"/>
+<arcpath id="001" x="540" y="291" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Torna claus to Procés inactius" source="Torna claus" target="Procés inactius">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="406" y="419" curvePoint="false"/>
+<arcpath id="001" x="547" y="544" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Torna clau to Claus disponibles" source="Torna clau" target="Claus disponibles">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="712" y="410" curvePoint="false"/>
+<arcpath id="001" x="563" y="291" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Torna clau to P5" source="Torna clau" target="Procés inactius">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="711" y="420" curvePoint="false"/>
+<arcpath id="001" x="569" y="544" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
