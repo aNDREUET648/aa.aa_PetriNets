@@ -35,7 +35,7 @@
 
 ### Enunciat
 
-Sa pràctica consisteix en sa implementació d'una Xarxa de Petri per a modelar el disseny de una TPU. Amb sa escasa informació facilitada per Google he considerat necessari recopilar tot el que he pogut trobar per Internet a un sol [document](./aa.aa_PetriNets/DSA-TPU_architecture.pdf).
+Sa pràctica consisteix en sa implementació d'una Xarxa de Petri per a modelar el disseny de una TPU. Amb sa escasa informació facilitada per Google he considerat necessari recopilar tot el que he pogut trobar per Internet a un sol [document](./DSA-TPU_architecture.pdf).
 
 El desarrollo de la practica será utilizando:
   - Bootstrap: para configurar el front-end.
