@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<place id="Accumulator">
+<graphics>
+<position x="1425.0" y="555.0"/>
+</graphics>
+<name>
+<value>Accumulator</value>
+<graphics>
+<offset x="123.0" y="7.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Host CPU">
+<graphics>
+<position x="270.0" y="165.0"/>
+</graphics>
+<name>
+<value>Host CPU</value>
+<graphics>
+<offset x="54.44444444444445" y="47.6666666666667"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Host CPU. Sink">
+<graphics>
+<position x="133.33333333333334" y="316.6666666666667"/>
+</graphics>
+<name>
+<value>Host CPU. Sink</value>
+<graphics>
+<offset x="66.11111111111114" y="-14.999999999999996"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Host Interface">
+<graphics>
+<position x="675.0" y="330.0"/>
+</graphics>
+<name>
+<value>Host Interface</value>
+<graphics>
+<offset x="75.0" y="-29.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Load Instructions">
+<graphics>
+<position x="465.0" y="165.0"/>
+</graphics>
+<name>
+<value>Load Instructions</value>
+<graphics>
+<offset x="84.0" y="-35.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Matrix Multiply Unit">
+<graphics>
+<position x="1425.0" y="330.0"/>
+</graphics>
+<name>
+<value>Matrix Multiply Unit</value>
+<graphics>
+<offset x="159.0" y="16.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Ready to Load">
+<graphics>
+<position x="1185.0" y="555.0"/>
+</graphics>
+<name>
+<value>Ready to Load</value>
+<graphics>
+<offset x="75.0" y="-25.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Ready to Write to Host CPU">
+<graphics>
+<position x="390.0" y="405.0"/>
+</graphics>
+<name>
+<value>Ready to Write to Host CPU</value>
+<graphics>
+<offset x="124.0" y="51.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="TPU Idle">
+<graphics>
+<position x="256.6666666666667" y="40.0"/>
+</graphics>
+<name>
+<value>TPU Idle</value>
+<graphics>
+<offset x="88.33333333333339" y="12.777777777777773"/>
+</graphics>
+</name>
+<initialMarking>
+<value>1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Unified Buffer">
+<graphics>
+<position x="1125.0" y="330.0"/>
+</graphics>
+<name>
+<value>Unified Buffer</value>
+<graphics>
+<offset x="65.0" y="-28.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Weight FIFO">
+<graphics>
+<position x="1020.0" y="165.0"/>
+</graphics>
+<name>
+<value>Weight FIFO</value>
+<graphics>
+<offset x="63.0" y="-36.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Weight Memory">
+<graphics>
+<position x="701.6666666666666" y="165.0"/>
+</graphics>
+<name>
+<value>Weight Memory</value>
+<graphics>
+<offset x="75.0" y="-35.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Weights Ready">
+<graphics>
+<position x="1245.0" y="165.0"/>
+</graphics>
+<name>
+<value>Weights Ready</value>
+<graphics>
+<offset x="71.0" y="-27.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="Compute. Activation. non-linear functions.">
+<graphics>
+<position x="1425.0" y="645.0"/>
+</graphics>
+<name>
+<value>Compute. Activation. non-linear functions.</value>
+<graphics>
+<offset x="275.0" y="14.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Compute. add &amp; multiply">
+<graphics>
+<position x="1425.0" y="435.0"/>
+</graphics>
+<name>
+<value>Compute. add &amp; multiply</value>
+<graphics>
+<offset x="183.0" y="9.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Control. Exec. Insts.">
+<graphics>
+<position x="585.0" y="165.0"/>
+</graphics>
+<name>
+<value>Control. Exec. Insts.</value>
+<graphics>
+<offset x="106.0" y="-46.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="DDR3 Interface. Load Weights">
+<graphics>
+<position x="840.0" y="165.0"/>
+</graphics>
+<name>
+<value>DDR3 Interface. Load Weights</value>
+<graphics>
+<offset x="146.0" y="-38.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="DMA Controller. Load to UniBuffer">
+<graphics>
+<position x="870.0" y="330.0"/>
+</graphics>
+<name>
+<value>DMA Controller. Load to UniBuffer</value>
+<graphics>
+<offset x="170.0" y="-40.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="DMA Controller. Write to Host CPU">
+<graphics>
+<position x="870.0" y="450.0"/>
+</graphics>
+<name>
+<value>DMA Controller. Write to Host CPU</value>
+<graphics>
+<offset x="154.0" y="-35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Fetch Weights">
+<graphics>
+<position x="1125.0" y="165.0"/>
+</graphics>
+<name>
+<value>Fetch Weights</value>
+<graphics>
+<offset x="75.0" y="-42.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Init">
+<graphics>
+<position x="360.0" y="165.0"/>
+</graphics>
+<name>
+<value>Init</value>
+<graphics>
+<offset x="38.0" y="-41.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Source">
+<graphics>
+<position x="165.0" y="165.0"/>
+</graphics>
+<name>
+<value>Source</value>
+<graphics>
+<offset x="49.0" y="-51.0"/>
+</graphics>
+</name>
+<orientation>
+<value>180</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Systolic Control">
+<graphics>
+<position x="1290.0" y="330.0"/>
+</graphics>
+<name>
+<value>Systolic Control</value>
+<graphics>
+<offset x="81.0" y="-42.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Write to Host CPU">
+<graphics>
+<position x="225.0" y="315.0"/>
+</graphics>
+<name>
+<value>Write to Host CPU</value>
+<graphics>
+<offset x="116.0" y="-35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>180</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<numberOfServers>
+<value>1</value>
+</numberOfServers>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Accumulator to Compute. Activation. non-linear functions." source="Accumulator" target="Compute. Activation. non-linear functions.">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1436" y="580" curvePoint="false"/>
+<arcpath id="001" x="1440" y="651" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Compute. Activation. non-linear functions. to Ready to Load" source="Compute. Activation. non-linear functions." target="Ready to Load">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1420" y="655" curvePoint="false"/>
+<arcpath id="001" x="1310" y="591" curvePoint="true"/>
+<arcpath id="002" x="1210" y="568" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Compute. Activation. non-linear functions. to TPU Idle" source="Compute. Activation. non-linear functions." target="TPU Idle">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1420" y="655" curvePoint="false"/>
+<arcpath id="001" x="1227" y="676" curvePoint="true"/>
+<arcpath id="002" x="833" y="557" curvePoint="true"/>
+<arcpath id="003" x="413" y="512" curvePoint="true"/>
+<arcpath id="004" x="73" y="508" curvePoint="true"/>
+<arcpath id="005" x="78" y="130" curvePoint="true"/>
+<arcpath id="006" x="187" y="40" curvePoint="true"/>
+<arcpath id="007" x="252" y="48" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Compute. Activation. non-linear functions. to Unified Buffer" source="Compute. Activation. non-linear functions." target="Unified Buffer">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1430" y="650" curvePoint="false"/>
+<arcpath id="001" x="1274" y="500" curvePoint="true"/>
+<arcpath id="002" x="1228" y="376" curvePoint="true"/>
+<arcpath id="003" x="1150" y="345" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Compute. add &amp; multiply to Accumulator" source="Compute. add &amp; multiply" target="Accumulator">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1435" y="450" curvePoint="false"/>
+<arcpath id="001" x="1435" y="551" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Control. Exec. Insts. to Host Interface" source="Control. Exec. Insts." target="Host Interface">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="595" y="191" curvePoint="false"/>
+<arcpath id="001" x="588" y="236" curvePoint="true"/>
+<arcpath id="002" x="613" y="297" curvePoint="true"/>
+<arcpath id="003" x="672" y="333" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Control. Exec. Insts. to Weight Memory" source="Control. Exec. Insts." target="Weight Memory">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="600" y="181" curvePoint="false"/>
+<arcpath id="001" x="697" y="176" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="DDR3 Interface. Load Weights to Weight FIFO" source="DDR3 Interface. Load Weights" target="Weight FIFO">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="855" y="175" curvePoint="false"/>
+<arcpath id="001" x="1015" y="175" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="DMA Controller. Load to UniBuffer to Unified Buffer" source="DMA Controller. Load to UniBuffer" target="Unified Buffer">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="885" y="341" curvePoint="false"/>
+<arcpath id="001" x="1121" y="340" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="DMA Controller. Write to Host CPU to Host Interface" source="DMA Controller. Write to Host CPU" target="Host Interface">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="875" y="456" curvePoint="false"/>
+<arcpath id="001" x="818" y="445" curvePoint="true"/>
+<arcpath id="002" x="697" y="350" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="DMA Controller. Write to Host CPU to Ready to Write to Host CPU" source="DMA Controller. Write to Host CPU" target="Ready to Write to Host CPU">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="875" y="466" curvePoint="false"/>
+<arcpath id="001" x="795" y="472" curvePoint="true"/>
+<arcpath id="002" x="533" y="406" curvePoint="true"/>
+<arcpath id="003" x="415" y="414" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Fetch Weights to Weights Ready" source="Fetch Weights" target="Weights Ready">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1140" y="175" curvePoint="false"/>
+<arcpath id="001" x="1241" y="175" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Host CPU to Init" source="Host CPU" target="Init">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="295" y="176" curvePoint="false"/>
+<arcpath id="001" x="365" y="181" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Host Interface to DMA Controller. Load to UniBuffer" source="Host Interface" target="DMA Controller. Load to UniBuffer">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="701" y="341" curvePoint="false"/>
+<arcpath id="001" x="875" y="341" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Host Interface to Write to Host CPU" source="Host Interface" target="Write to Host CPU">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="671" y="340" curvePoint="false"/>
+<arcpath id="001" x="241" y="320" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Init to Load Instructions" source="Init" target="Load Instructions">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="375" y="175" curvePoint="false"/>
+<arcpath id="001" x="461" y="175" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Load Instructions to Control. Exec. Insts." source="Load Instructions" target="Control. Exec. Insts.">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="491" y="175" curvePoint="false"/>
+<arcpath id="001" x="590" y="176" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Matrix Multiply Unit to Compute. add &amp; multiply" source="Matrix Multiply Unit" target="Compute. add &amp; multiply">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1435" y="355" curvePoint="false"/>
+<arcpath id="001" x="1434" y="440" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Ready to Load to DMA Controller. Write to Host CPU" source="Ready to Load" target="DMA Controller. Write to Host CPU">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1186" y="553" curvePoint="false"/>
+<arcpath id="001" x="1100" y="484" curvePoint="true"/>
+<arcpath id="002" x="956" y="476" curvePoint="true"/>
+<arcpath id="003" x="885" y="465" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Ready to Write to Host CPU to Write to Host CPU" source="Ready to Write to Host CPU" target="Write to Host CPU">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="387" y="408" curvePoint="false"/>
+<arcpath id="001" x="240" y="330" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Source to Host CPU" source="Source" target="Host CPU">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="181" y="174" curvePoint="false"/>
+<arcpath id="001" x="265" y="175" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Systolic Control to Matrix Multiply Unit" source="Systolic Control" target="Matrix Multiply Unit">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1305" y="341" curvePoint="false"/>
+<arcpath id="001" x="1421" y="340" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TPU Idle to Init" source="TPU Idle" target="Init">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="276" y="62" curvePoint="false"/>
+<arcpath id="001" x="365" y="171" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Unified Buffer to DMA Controller. Write to Host CPU" source="Unified Buffer" target="DMA Controller. Write to Host CPU">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1124" y="350" curvePoint="false"/>
+<arcpath id="001" x="947" y="450" curvePoint="true"/>
+<arcpath id="002" x="885" y="455" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Unified Buffer to Systolic Control" source="Unified Buffer" target="Systolic Control">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1150" y="341" curvePoint="false"/>
+<arcpath id="001" x="1295" y="346" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Weight FIFO to Fetch Weights" source="Weight FIFO" target="Fetch Weights">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1045" y="175" curvePoint="false"/>
+<arcpath id="001" x="1130" y="176" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Weight Memory to DDR3 Interface. Load Weights" source="Weight Memory" target="DDR3 Interface. Load Weights">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="727" y="175" curvePoint="false"/>
+<arcpath id="001" x="845" y="176" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Weights Ready to Systolic Control" source="Weights Ready" target="Systolic Control">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="1270" y="175" curvePoint="false"/>
+<arcpath id="001" x="1325" y="196" curvePoint="true"/>
+<arcpath id="002" x="1201" y="272" curvePoint="true"/>
+<arcpath id="003" x="1238" y="325" curvePoint="true"/>
+<arcpath id="004" x="1295" y="336" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Write to Host CPU to Host CPU. Sink" source="Write to Host CPU" target="Host CPU. Sink">
+<graphics/>
+<inscription>
+<value>1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="231" y="325" curvePoint="false"/>
+<arcpath id="001" x="158" y="326" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
