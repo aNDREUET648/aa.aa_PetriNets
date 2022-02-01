@@ -7,7 +7,6 @@
 - [Introducció](#introducció)
 - [Enunciat](#enunciat)
 - [Requisits mínims](#requisits-mínims)
-- [Versión Avanzada](#versión-avanzada)
 - [Estructura](#estructura)
 - [Client Side](#client-side)
   - [Página principal](#página-principal)
@@ -35,32 +34,18 @@
 
 ### Enunciat
 
-Sa pràctica consisteix en sa implementació d'una Xarxa de Petri per a modelar el disseny de una TPU. Amb sa escasa informació facilitada per Google he considerat necessari recopilar tot el que he pogut trobar per Internet a un sol [document](./DSA-TPU_architecture.pdf).
+Sa pràctica consisteix en sa implementació d'una Xarxa de Petri per a modelar el disseny de una TPU v1. Amb sa escasa informació facilitada per Google he considerat necessari recopilar tot el que he pogut trobar per Internet a un sol [document](./DSA-TPU_architecture.pdf).
 
-El desarrollo de la practica será utilizando:
-  - Bootstrap: para configurar el front-end.
-  - JavaScript y JQuery: para poder modificar los contenidos del DOM de la página web. 
-  - Se puede usar Ajax de JQuery para extraer los datos de los archivos del servidor Apache (Xampp) i modificar los contenidos del DOM de la web en base a lo recibido.
-  - HighCharts y/o HighMaps: para hacer las visualizaciones en el dashboard.
-  - Xampp, php: para el servidor web.
+Implementar una TPU completa pot ser una feina complicada. Per a reduir sa càrrega de treball i millorar sa viabilitat es requeriran una sèrie de simplificacions per a sa TPU. Totes ses simplificacions no han de perdre el concepte de disseny de sa pròpia TPU.
 
 #### Requisits mínims
 
   - La parte superior del tablero debe tener una barra de navegación que contenga un vínculo con una clase navbar-brand para el título del dashboard y un atributo href igual a "#", un vínculo al sitio web de la UIB y otro vínculo a la fuente de datos. Puede agregar otros enlaces si lo desea.
   - Mínimo tres visualizaciones con Highcharts y/o highmaps.
 
-#### Versión avanzada
-
-  Una versión avanzada opcional de la práctica puede ser mediante extraer datos de una API. API son las siglas de Application Programming Interface (Interfaz de programación de aplicaciones). 
-  Una API proporciona una forma conveniente para que dos aplicaciones se comuniquen entre sí. 
-  El beneficio es que, si los datos alguna vez cambian, su aplicación web automáticamente tendrá los datos correctos.
-
-  [Enunciado Original](./Data%20Dashboard/Enunciado%20de%20la%20pr%C3%A1ctica.pdf)
-
----
-
 ### Estructura
 
+![Diagrama de Blocs](./tpu_block_diagram.png?raw=true "Diagrama de Blocs de la TPU")
 
 ```
 Data Dashboard
