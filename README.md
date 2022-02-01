@@ -3,7 +3,7 @@
 ## [***Petri Nets***](https://github.com/aNDREUET648/aa.aa_PetriNets)
 
 
-## Taula de contingut
+## Taula de continguts
 - [Introducció](#introducció)
 - [Enunciat](#enunciat)
 - [Requisits mínims](#requisits-mínims)
@@ -18,19 +18,18 @@
 
 ### Introducció
 
-El ràpid desenvolupament de s'aprenentatge profund ha implicat que ens donem compte que els processadors originals no poden cumplir amb 
-Durante el rápido desarrollo del aprendizaje profundo, las personas descubrieron que los procesadoresoriginales no podían cumplir con los cálculos específicos a gran escala de las redes neuronales, y secomenzó a diseñar una gran cantidad de chips especiales para esta aplicación.
-La Unidad de procesamientode tensor de Google (TPU para abreviar) es un tipo de diseño representativo que se completó anteriormente.TPU utiliza una unidad de aceleración de computación matricial basada en un diseño de matriz sistólica, quepuede acelerar el cálculo de redes neuronales. .
-Esta serie de artículos utilizará los materiales públicosrelacionados con TPU V1, hará ciertas simplificaciones, especulaciones y modificaciones, para escribir unaversión simple de Google TPU, a fin de comprender con mayor precisión las ventajas y limitaciones de TPU.
+   El ràpid desenvolupament del *Deep Learning* ha fet que ens adonem que els processadors originals ja no poden realitzar càlculs específics a gran escala amb sa premura que requerim.
 
-EL FIN DE LA LEY DE MOORE deja a las arquitecturas de dominio como el futuro de la informática. Un ejemplo pionero ejemplo es la unidad de procesamiento tensorial (TPU) de Google, desplegada por primera vez en 2015, y que hoy proporciona servicios a más de mil millones de personas. Ejecuta redes neuronales profundas (DNN) entre 15 y 30 veces más rápido y con una eficiencia energética entre 30 y 80 veces superior a la de las CPUs actuales y las GPU de tecnologías similares.
-Todas las leyes exponenciales deben llegar a su fin. En 1965, Gordon Moore predijo que el número de de transistores por chip se duplicaría cada uno o dos años. A pesar de la afirmación de lo contrario en la portada de Communications (enero de 2017) que "Los informes sobre mi muerte son muy exageradas", la Ley de Moore está efectivamente, está terminando. El chip DRAM presentado en 2014 contenía ocho mil millones de transistores, y un chip DRAM de 16 mil millones 16 mil millones de transistores no se producirá en masa hasta 2019, pero la Ley de Moore predice un aumento de cuatro veces
+   En 1965, Gordon Moore va predir que el nombre de transistors per xip es duplicaria cada un o dos anys, ja no comptam amb s'*Escala de Dennard* per que ja no s'aplica. Ja em substituït el processador únic per múltiples nuclis, però encara així ses millores cost-rendiment i eficiència energètica per a arquitectures de propòsit general és limitat (límits d'electromigració, mecànics i tèrmics dels xips). 
 
-Por lo tanto, no nos queda nada bajo la manga para continuar mejoras importantes en costo-rendimiento y eficiencia energética para arquitecturas de propósito general. Debido a que el presupuesto de energía es limitado (debido a los límites de electromigración, mecánicos y térmicos de los chips), si queremos un mayor rendimiento (operaciones más altas / segundo), necesitamos    reducir la energía por operación.
+   Si volem un major rendiment (més operacions/segon), necessitam reduir s'energia per operació i a la vegada augmentar el nombre d'operacions aritmètiques/instrucció d'una a centenars. Aquesta desesperació per aconseguir aquest nivell d'eficiència és sa raó pel que els arquitectes han realitzat un canvi dràstic en s'arquitectura dels ordinadors passant dels nuclis de propòsit general a ses *Arquitectures de Domini Específic (DSA)*.
+   
+   Aquesta nova normalitat és que un ordinador estigui format per processadors estàndard per a executar programes convencionals, com els sistemes operatius, junt amb *processadors específics de domini* que només realitzin un rang estret de tasques, però que les fa extremadament ràpid i bé. Per tant, aquests ordinadors seran molt més heterogenis que els xips multinucli homogenis del passat.
+   
+   Un disseny representatiu en materia de DSA és sa *[Unitat de Processament Tensorial de Google (Tensor Processing Unit)](https://cloud.google.com/tpu/docs/intro-to-tpu)*. Sa Unitat de Processament Tensorial (TPU) es va implantar per primera vegada al 2015 i actualment proporciona serveis a més de mil milions de persones. Sa TPU fa servir una unitat d'acceleració de càlcul matricial basat en un disseny de matriu sistòlica que accelera el càlcul de ses Xarxes Neuronals Profundes (Deep Neural Networks. DNN) entre 15 i 30 vegades més ràpid i amb una eficiència energètica entre 30 i 80 vegades superior a les CPUs actual i les GPUs de tecnologies similars.
 
-Por lo tanto, así como el campo cambió de uniprocesadores a multiprocesadores en la última década por necesidad, la desesperación es la razón por la que los arquitectos ahora están trabajando en DSA. La nueva normalidad es que un competidor consistirá en procesadores estándar para ejecutar programas grandes convencionales, como sistemas operativos, junto con procesadores específicos del dominio que realizan solo una gama estrecha de tareas, pero las hacen extremadamente bien. Por lo tanto, tales computadoras   serán    mucho más heterogénea que los chips multinúcleo homogéneos del    pasado.
-
-
+   Si bé encara segueix essent vàlida, la *Llei de Moore* està arribant a la seva fi, deixant a les *Arquitectures de Domini Específic (DSA)* el pes del futur de la informàtica.
+      
 
 ---
 
