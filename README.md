@@ -57,7 +57,15 @@ Una representació de sa Xarxa de Petri de sa TPU es la seguent:
 
 ### Consideracions
 
-
+  Pendent encara de afegir-ho. Ara només idees.
+  
+  - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
+  - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
+  - Matrix Multiply Unit to perform a matrix multiply, or a convolution from the Unified Buffer into the Accumulators.
+  - The TPU does not have a program counter, and it has no branch instructions; instructions are sent from the host CPU.
+  - Activate performs the nonlinear function of the artificial neuron. Its inputs are the Accumulators, and its output is the Unified Buffer. It can also perform the pooling operations needed for convolutions using the dedicated hardware on the die, as it is connected to nonlinear function logic.
+  - To increase instruction parallelism further, toward that end, the Read_Weights instruction follows the decoupled access/execute philosophy in that they can complete after sending its address but before the weights are fetched from Weight Memory.
+  - 
 
 ---
 
