@@ -44,7 +44,7 @@ Per a poder executar sa pràctica heu de fer el seguent:
   - Descomprimir-ho
   - Per a sa versió *Windows*, executar s'arxiu ```pipe.bat```
   - Per a sa versió *linux*, executar ```pipe.sh```
-  - Obriu s'arxiu ```TPU ARCHITECTURE v.2.0.xml```
+  - Obriu s'arxiu [```TPU ARCHITECTURE v.2.0.xml```](./TPU%20ARCHITECTURE%20v.2.0.xml)
 
 ---
 ### Xarxa de Petri
