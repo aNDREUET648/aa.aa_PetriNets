@@ -51,7 +51,7 @@ Per a poder executar sa pràctica heu de fer el seguent:
 
 Una representació de sa Xarxa de Petri de sa TPU es la seguent:
 
-![Diagrama de Blocs](./tpu_petri_net.png?raw=true "Xarxa de Petri de la TPU")
+![Xarxa de Petri](./tpu_petri_net.PNG?raw=true "Xarxa de Petri de la TPU")
 
 ---
 
