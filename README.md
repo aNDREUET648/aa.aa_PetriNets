@@ -59,6 +59,8 @@ Una representació de sa Xarxa de Petri de sa TPU es la seguent:
 
   Pendent encara de afegir-ho. Ara només idees.
   
+  - No hi ha marcat inicial. Tenc una **Transició Source**.
+  - Hi ha d'haver un lloc **TPU Idle**?
   - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
   - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
   - Matrix Multiply Unit to perform a matrix multiply, or a convolution from the Unified Buffer into the Accumulators.
