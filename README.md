@@ -66,7 +66,9 @@ Degut a que el **Control** és la part que menys comentada, centraré el focus d
 
 Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat), les etiquetes dels *Llocs* i de les *Transicions* tendran un nom similar, sino que hi haurà, que seran el mateix.
 
-La càrrega d'instruccions que vagin arribant es farà a través d'una transició *source* que es diu *Load Intruction* i és de tipus temporatizat (de rati=0.25). La resta de transicions són inmediates.
+A una Xarxa de Petri Estocàstica Generalitzada (GSPN) per un marcat donat, diverses transicions poden estar simultàniament habilitades, i si s'incloeixen transicions inmediates i temporitzades, només les transiciions inmediates poden disparar-se perquè tenen una prioritat més alta que les temporitzades.
+
+La càrrega d'instruccions que vagin arribant es farà a través d'una transició *source* que es diu *Load Instruction* i és de tipus temporatizat (de rati=0.25). La resta de transicions són inmediates. La meva intenció hagués estat afegir dues transicions temporitzades â on es facin crides *Off-Chip* aquestes són *Load Weights* i *DMA Controller. Write to Host*, però em trob que hi ha marcats a on es solapen amb transicions inmediates i aquestes dues no s'arriben a disparar mai.
 
 El punts clau que he tret del document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) són els següents:
    - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
