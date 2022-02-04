@@ -66,6 +66,8 @@ Degut a que el **Control** és la part que menys comentada, centraré el focus d
 
 Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat), les etiquetes dels *Llocs* i de les *Transicions* tendran un nom similar, sino que hi haurà, que seran el mateix.
 
+La càrrega d'instruccions que vagin arribant es farà a través d'una transició *source* que es diu *Load Intruction* i és de tipus temporatizat (de rati=0.25). La resta de transicions són inmediates.
+
 El punts clau que he tret del document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) són els següents:
    - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
    - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
