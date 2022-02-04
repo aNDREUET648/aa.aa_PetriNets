@@ -66,23 +66,21 @@ Degut a que el **Control** és la part que menys comentada, centraré el focus d
 
 Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat), les etiquetes dels *Llocs* i de les *Transicions* tendran un nom similar, sino que hi haurà, que seran el mateix.
 
-   - El punts clau que he tret del document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) són els següents:
-      - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
-      - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
-      - Matrix Multiply Unit to perform a matrix multiply, or a convolution from the Unified Buffer into the Accumulators.
-      - The TPU does not have a program counter, and it has no branch instructions; instructions are sent from the host CPU.
-      - Activate performs the nonlinear function of the artificial neuron. Its inputs are the Accumulators, and its output is the Unified Buffer. It can also perform the pooling operations needed for convolutions using the dedicated hardware on the die, as it is connected to nonlinear function logic.
+El punts clau que he tret del document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) són els següents:
+   - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
+   - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
+   - The TPU does not have a program counter, and it has no branch instructions; instructions are sent from the host CPU.
 
-   - ```***Read_Weights***``` llegirà els pesos del ```Weight Memory```, els carregarà a la ```Weight FIFO``` a l'espera per començar a operar-les.
-   - ```***Matrix_Multiply/Convolve***``` és una instrucció de doble, i té distint comportament depenguent del que hagi de fer:
-      - *Convolucions*: collirà les dades del *Unified Buffer* i les ficarà als *Accumulators* per a després operar. 
-      - *Matrix_Multiply*: no entraré en detalls  ***Activate***. ***Read_Host_Memory*** i ***Write_Host_Memory*** són tractades com a una mateixa categoria. Així cadascuna de les 4 categories generals d'instruccions tenen un hardware d'execució independent.
-      - 
-      - La unidad de multiplicación de matrices tiene señales de "no listo" procedentes del buffer unificado y del FIFO de peso que harán que la unidad de multiplicación de matrices se detenga si los datos de activación de entrada o de peso no están todavía disponibles.
-      - 
-      - 
-  - 
-  - 
+El tractament de cada una de les 4 categories d'instruccions és independent
+   - ```Read_Weights``` llegirà els pesos del ```Weight Memory```, els carregarà a la ```Weight FIFO``` a l'espera per començar a operar-les.
+   - ```Matrix_Multiply/Convolve``` és una instrucció de doble, i té distint comportament depenguent del que hagi de fer:
+      - *Convolve*: collirà les dades del *Unified Buffer* i les ficarà als *Accumulators* per a després operar. 
+      - *Multiply*: operació encarregada en multiplicar a la *Matrix Multiply Unit* les dades que hi ha al *Unified Buffer* amb els pesos que hi ha a la *Weight FIFO*. No entraré en detalls si ses multiplicacions son de vectors, matrius o parts de la matriu.
+   - ```Activate``` realitza les funcions no lineals de la neurona artificial (ReLU, Sigmoide, tanh, etc). Les seves entrades són els *Accumulators* i la seva sortida va cap el *Unified Buffer*. Aquí és on també es realitzen les operacions necessàries d'agrupació per a les convolucions ja que està connectat amb la lògica de la funció no lineal.
+   - ```Read_Host_Memory``` i ```Write_Host_Memory``` són tractades com a una mateixa categoria, a on el *Host Interface* és el seu nexe de unió (Xarxa de Petri *Lector-Escriptor*).
+
+Mitjançant la transició *Systolic Control* controlarem que tenim carregats els pesos, hi ha les dades d'activació d'entrada al *Unified Buffer* i tenim una operació de *Multiply* a punt per executar la *Matrix Multiply Unit 
+
   - To increase instruction parallelism further, toward that end, the Read_Weights instruction follows the decoupled access/execute philosophy in that they can complete after sending its address but before the weights are fetched from Weight Memory.
   - 
 
