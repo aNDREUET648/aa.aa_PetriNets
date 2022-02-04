@@ -30,7 +30,9 @@
 
 ### Enunciat
 
-Implementació d'una Xarxa de Petri per a modelar l'arquitectura d'una *Unitat de Processament Tensorial de Google*. 
+Implementació d'una Xarxa de Petri per a modelar l'arquitectura d'una *Unitat de Processament Tensorial de Google*.
+
+El document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) recull tota la informació aconseguida per a la realització de la pràctica. 
 
 ![Diagrama de Blocs](./tpu_block_diagram.png?raw=true "Diagrama de Blocs de la TPU")
 
@@ -38,9 +40,8 @@ Implementació d'una Xarxa de Petri per a modelar l'arquitectura d'una *Unitat d
 ### Requisits mínims
 
 Per a poder executar sa pràctica cal instal·lar l'eina PIPE 2.7 *(Platform-Independent Petri net Editor)* i seguir les següents pases:
-  - Descarregar s'arxiu comprimit *.zip* [```Pipe 2.7```](./pipe2.7/pipe2.7%5B20131028%5D.zip).  
-  - Descomprimir-ho. Aquí trobaràs 
-  - Descarregar s'arxiu [```TPU ARCHITECTURE v.2.1.xml```](./TPU ARCHITECTURE v.2.1.xml). Aquesta és la pràctica en qüestió. La Xarxa de Petri a analitzar. Podeu clicar aquest enllaç o adalt de tot teniu l'arxiu disponible també per a descarregar.
+  - Descarregar i descomprimir s'arxiu comprimit *.zip* [```Pipe 2.7```](./pipe2.7/pipe2.7%5B20131028%5D.zip).  
+  - Descarregar també s'arxiu [```TPU ARCHITECTURE v.2.1.xml```](./TPU%20ARCHITECTURE%20v.2.1.xml). Aquesta és la pràctica en qüestió. La Xarxa de Petri a analitzar. Podeu clicar aquest enllaç o adalt de tot teniu l'arxiu disponible també per a descarregar.
   - Per a l'execució de la versió *Windows*, executar s'arxiu ```pipe.bat```
   - Per a l'execució de la versió *linux*, executar ```pipe.sh```
   - Obriu s'arxiu ```TPU ARCHITECTURE v.2.1.xml```
@@ -48,7 +49,7 @@ Per a poder executar sa pràctica cal instal·lar l'eina PIPE 2.7 *(Platform-Ind
 ---
 ### Xarxa de Petri
 
-Una representació de sa Xarxa de Petri de sa TPU es la seguent:
+Una representació de sa Xarxa de Petri per a la nostra TPU és la següent:
 
 ![Xarxa de Petri](./tpu_petri_net_v2.1.PNG?raw=true "Xarxa de Petri de la TPU")
 
@@ -57,21 +58,18 @@ Una representació de sa Xarxa de Petri de sa TPU es la seguent:
 ### Consideracions
 
 
-Amb l'escasa informació facilitada per Google he considerat necessari recopilar tot el que he pogut trobar per Internet a un sol [document](./DSA-TPU_architecture.pdf). El model en el que basaré la pràctica és la TPUv1 on he trobat tota la informació.
+El model en el que basaré la pràctica és la TPUv1 on he trobat tota la informació.
 
 Implementar una TPU completa pot ser una feina complicada. Per tal de reduir sa càrrega de treball i millorar sa viabilitat es requeriran una sèrie de simplificacions per a la TPU. Totes les simplificacions han de ser tal que, no han de perdre el concepte de disseny de la pròpia TPU.
 
 Degut a que el **Control** és la part que menys comentada, centraré el focus d'atenció de la Xarxa de Petri en aquesta direcció, i més concretament en l'execució de les instruccions que impliquen l'execució de la resta de blocs de la *TPU*.
 
-Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat) (més adalt) les etiquetes dels *Llocs* i de les *Transicions* tendran un nom similar, sino que hi haurà que seran el mateix.
-
-
-  
-  - No hi ha marcat inicial. Tenc una **Transició Source**.
-  - Hi ha d'haver un lloc **TPU Idle**?
-  - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
-  - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
-  - Matrix Multiply Unit to perform a matrix multiply, or a convolution from the Unified Buffer into the Accumulators.
+   - Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat), les etiquetes dels *Llocs* i de les *Transicions* tendran un nom similar, sino que hi haurà, que seran el mateix.
+   - El punts que he trobat més rel·levants són els següents:
+      - Dins la documentació inclosa a l'[Enunciat](#enunciat)
+      - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
+      - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
+      - Matrix Multiply Unit to perform a matrix multiply, or a convolution from the Unified Buffer into the Accumulators.
   - The TPU does not have a program counter, and it has no branch instructions; instructions are sent from the host CPU.
   - Activate performs the nonlinear function of the artificial neuron. Its inputs are the Accumulators, and its output is the Unified Buffer. It can also perform the pooling operations needed for convolutions using the dedicated hardware on the die, as it is connected to nonlinear function logic.
   - To increase instruction parallelism further, toward that end, the Read_Weights instruction follows the decoupled access/execute philosophy in that they can complete after sending its address but before the weights are fetched from Weight Memory.
