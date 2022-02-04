@@ -70,6 +70,7 @@ El punts clau que he tret del document [Arquitectura de la TPU](./DSA-TPU_archit
    - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
    - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
    - The TPU does not have a program counter, and it has no branch instructions; instructions are sent from the host CPU.
+   - To increase instruction parallelism further, toward that end, the Read_Weights instruction follows the decoupled access/execute philosophy in that they can complete after sending its address but before the weights are fetched from Weight Memory.
 
 El tractament de cada una de les 4 categories d'instruccions és independent
    - ```Read_Weights``` llegirà els pesos del ```Weight Memory```, els carregarà a la ```Weight FIFO``` a l'espera per començar a operar-les.
@@ -79,10 +80,13 @@ El tractament de cada una de les 4 categories d'instruccions és independent
    - ```Activate``` realitza les funcions no lineals de la neurona artificial (ReLU, Sigmoide, tanh, etc). Les seves entrades són els *Accumulators* i la seva sortida va cap el *Unified Buffer*. Aquí és on també es realitzen les operacions necessàries d'agrupació per a les convolucions ja que està connectat amb la lògica de la funció no lineal.
    - ```Read_Host_Memory``` i ```Write_Host_Memory``` són tractades com a una mateixa categoria, a on el *Host Interface* és el seu nexe de unió (Xarxa de Petri *Lector-Escriptor*).
 
-Mitjançant la transició *Systolic Control* controlarem que tenim carregats els pesos, hi ha les dades d'activació d'entrada al *Unified Buffer* i tenim una operació de *Multiply* a punt per executar la *Matrix Multiply Unit 
+Mitjançant la transició *Systolic Control* controlarem que tenim carregats els pesos, les dades d'activació d'entrada al *Unified Buffer* i tenim una operació de *Multiply* a punt per executar la *Matrix Multiply Unit*.
 
-  - To increase instruction parallelism further, toward that end, the Read_Weights instruction follows the decoupled access/execute philosophy in that they can complete after sending its address but before the weights are fetched from Weight Memory.
-  - 
+La transició *Read_Host_Memory* estarà habilitada si el llocs *CPU Host Memory* i *Host Interface* estan disponibles i tenim una instrucció al *Instruction Buffer*. Només així podrem carregar les dades d'activació d'entrada, i no serà fins que la transició *DMA Controller. Load from Host* hagi carregat aquestes dades al *Unified Buffer* que no tornarem a tenir el *Host Interface* disponible.
+
+Per una altra banda *Write_Host Memory* estarà habilitada quan el *Host Interface* estigui disponible, tenguem una instrucció al *Instruction Buffer* i s'hagin tractat ses dades a *Compute. Activation*. A partir d'aquest *Host Interface* estarà ocupat i no tornarà estar lliure fins al moment d'escriure les dades al *CPU Host Memory* mitjançant la transició *DMA Controller. Write to Host* i només passarà si són enviades al *Unified Buffer* a través de la transició *Send to Unibuffer*.
+
+ 
 
 ---
 
