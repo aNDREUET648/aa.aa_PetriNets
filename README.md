@@ -40,30 +40,32 @@ Implementació d'una Xarxa de Petri per a modelar l'arquitectura d'una *Unitat d
 Per a poder executar sa pràctica cal instal·lar l'eina PIPE 2.7 *(Platform-Independent Petri net Editor)* i seguir les següents pases:
   - Descarregar s'arxiu comprimit *.zip* [```Pipe 2.7```](./pipe2.7/pipe2.7%5B20131028%5D.zip).  
   - Descomprimir-ho. Aquí trobaràs 
-  - Descarregar s'arxiu [```TPU ARCHITECTURE v.2.0.xml```](./TPU%20ARCHITECTURE%20v.2.0.xml). Aquesta és la pràctica en qüestió. La Xarxa de Petri a analitzar.
+  - Descarregar s'arxiu [```TPU ARCHITECTURE v.2.1.xml```](./TPU ARCHITECTURE v.2.1.xml). Aquesta és la pràctica en qüestió. La Xarxa de Petri a analitzar. Podeu clicar aquest enllaç o adalt de tot teniu l'arxiu disponible també per a descarregar.
   - Per a l'execució de la versió *Windows*, executar s'arxiu ```pipe.bat```
   - Per a l'execució de la versió *linux*, executar ```pipe.sh```
-  - Obriu s'arxiu ```TPU ARCHITECTURE v.2.0.xml```
+  - Obriu s'arxiu ```TPU ARCHITECTURE v.2.1.xml```
 
 ---
 ### Xarxa de Petri
 
 Una representació de sa Xarxa de Petri de sa TPU es la seguent:
 
-![Xarxa de Petri](./tpu_petri_net.PNG?raw=true "Xarxa de Petri de la TPU")
+![Xarxa de Petri](./tpu_petri_net_v2.1.PNG?raw=true "Xarxa de Petri de la TPU")
 
 ---
 
 ### Consideracions
 
 
-Amb l'escasa informació facilitada per Google he considerat necessari recopilar tot el que he pogut trobar per Internet a un sol [document](./DSA-TPU_architecture.pdf). El model en el que basaré la pràctica és la TPUv1 ja que és on he trobat més informació.
+Amb l'escasa informació facilitada per Google he considerat necessari recopilar tot el que he pogut trobar per Internet a un sol [document](./DSA-TPU_architecture.pdf). El model en el que basaré la pràctica és la TPUv1 on he trobat tota la informació.
 
 Implementar una TPU completa pot ser una feina complicada. Per tal de reduir sa càrrega de treball i millorar sa viabilitat es requeriran una sèrie de simplificacions per a la TPU. Totes les simplificacions han de ser tal que, no han de perdre el concepte de disseny de la pròpia TPU.
 
-Degut a que el **Control** és la part que menys es detalla, centraré el focus d'atenció de la Xarxa de Petri en aquesta direcció, i més concretament en l'execució de les instruccions que impliquen l'execució de la resta de blocs de la *TPU*.
+Degut a que el **Control** és la part que menys comentada, centraré el focus d'atenció de la Xarxa de Petri en aquesta direcció, i més concretament en l'execució de les instruccions que impliquen l'execució de la resta de blocs de la *TPU*.
 
-Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat) (més adalt)
+Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat) (més adalt) les etiquetes dels *Llocs* i de les *Transicions* tendran un nom similar, sino que hi haurà que seran el mateix.
+
+
   
   - No hi ha marcat inicial. Tenc una **Transició Source**.
   - Hi ha d'haver un lloc **TPU Idle**?
@@ -85,6 +87,7 @@ Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enuncia
   - [Petri Nets. Properties, Analysis and Applications](./Murata%20-%20Petri%20Nets%20-%20Properties%2C%20Analysis%20and%20Applications.pdf) - Proceedings of the IEEE ( Volume: 77, Issue: 4, April 1989). Tadao Murata
   - [Petri Net Theory and the Modeling of Systems](https://www.amazon.es/Petri-Net-Theory-Modeling-Systems/dp/1080591176) - Chapters 1, 2 and 3. James L. Peterson
   - Documentació de classe del Tema 4 - Arquitectures de Domini Específiques - Assignatura. Arquitectures Avançades. Cati Lladó
+  - [PIPE v2.5: a Petri Net Tool for Performance Modeling](https://www.doc.ic.ac.uk/~wjk/publications/bonet-llado-knottenbelt-puijaner-clei-2007.pdf) - P. Bonet, C. Lladó, R. Puigjaner and W. Knottenbelt
 
 
 ---
