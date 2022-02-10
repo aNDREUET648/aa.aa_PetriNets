@@ -34,14 +34,14 @@ Implementació d'una Xarxa de Petri per a modelar l'arquitectura d'una *Unitat d
 
 El document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) recull tota la informació aconseguida per a la realització de la pràctica. 
 
-![Diagrama de Blocs](./tpu_block_diagram.png?raw=true "Diagrama de Blocs de la TPU")
+![Diagrama de Blocs](./imatges/tpu_block_diagram.png?raw=true "Diagrama de Blocs de la TPU")
 
 ---
 ### Requisits mínims
 
 Per a poder executar la pràctica cal instal·lar l'eina PIPE 2.7 *(Platform-Independent Petri net Editor)* i seguir les següents pases:
   - Descarregar i descomprimir l'arxiu comprimit *.zip* [```Pipe 2.7```](./pipe2.7/pipe2.7%5B20131028%5D.zip).  
-  - Descarregar també l'arxiu [```TPU ARCHITECTURE v.2.1.xml```](./TPU%20ARCHITECTURE%20v.2.1.xml). Aquesta és la pràctica en qüestió. La Xarxa de Petri a analitzar. Podeu clicar aquest enllaç o adalt de tot teniu l'arxiu disponible també per a descarregar.
+  - Descarregar també l'arxiu [```TPU ARCHITECTURE v.2.2.xml```](./TPU%20ARCHITECTURE%20v.2.2.xml). Aquesta és la pràctica en qüestió. La Xarxa de Petri a analitzar. Podeu clicar aquest enllaç o adalt de tot teniu l'arxiu disponible també per a descarregar.
   - Per a l'execució de la versió *Windows*, executar s'arxiu ```pipe.bat```
   - Per a l'execució de la versió *linux*, executar ```pipe.sh```
   - Obriu l'arxiu ```TPU ARCHITECTURE v.2.1.xml```
@@ -51,7 +51,7 @@ Per a poder executar la pràctica cal instal·lar l'eina PIPE 2.7 *(Platform-Ind
 
 Una representació de la Xarxa de Petri per a la nostra TPU és la següent:
 
-![Xarxa de Petri](./tpu_petri_net_v2.1.PNG?raw=true "Xarxa de Petri de la TPU")
+![Xarxa de Petri](./imatges/tpu_petri_net_v2.2.PNG?raw=true "Xarxa de Petri de la TPU")
 
 ---
 
