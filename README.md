@@ -62,7 +62,7 @@ Una representació de la Xarxa de Petri per a la nostra TPU és la següent:
 
 ---
 
-###El model
+### El model
 
 La xarxa està bassada en la TPUv1, que es d’on he obtingut tota la informació.
 
@@ -85,30 +85,30 @@ La resta de transicions (immediates), tot i llevat que la durada es 0, he defini
 
 A l’hora d’explicar el funcionament de la xarxa fent referència a les transicions, per a poder distingir entre immediates i temporitzades indicaré entre parèntesi (I) i (T) respectivament.
 
-###Funcionament
+### Funcionament
 
 La xarxa va  rebent instruccions del lloc Instructions limitada amb un marcatge inicial de 30 (la TPU només rebrà com a màxim 30 instruccions) i es van carregant a través de  la transició Load Instruction (T) i les va depositant en el lloc Instruction Buffer. Per tal de no acabar carregant totes les instruccions al lloc també ho he limitat amb una capacitat màxima de 4 (k=4).
 
-####Els pesos
+#### Els pesos
 La transició Read_Weights(I), serà l’encarregada de preparar al lloc Weight Memory_Ready (a on se li carrega l’adreça a on ha d’anar a cercar). Quan ja la té, mitjançant la transició Load_Weights(T) la va a cercar a la DRAM i la deixa al lloc DDR Interface, d’aquest mode habilitarà la transició Fetch_Weights(I) que quan es dispari deixarà carregat els pesos al lloc Weight_FIFO_Ready, just preparat per esser tractats pel lloc Matrix Multiply Unit.
 
-####L’activació d’entrada
+#### L’activació d’entrada
 La transició Read_Host_Memory(I), carregarà del lloc CPU Host Memory les dades d’activació d’entrada (tingui una marca/token al seu lloc) i quan el lloc Host Interface estigui disponible (tingui una marca/token). En aquest moment estarà habilitada per dispara. Quan això ocorri el lloc Data Ready tindrà les dades disponibles i habilitarà la transició DMA Controller. Load from Host(T) que quan es dispari carregarà les dades al lloc Unified Buffer a punt per esser tractades al  lloc Matrix Multiply Unit.
 
-####Les operacions
+#### Les operacions
 La transició Matrix Multiply/Convolve(I) carregarà al lloc Matrix Operation la informació del tipus d’operació. Tant per habilitar la transició Multiply(I) com la transició Convolve(I) el lloc Operation Control ha de tenir una marca, que inicialment la té i la tornarà a tenir quan s’hagin escrit les dades processades al Host (a través de la transició DMA Controller Write to Host(T)). 
 Si es dispara la transició Multiply(I), deixarà al lloc Multiply Ready tota la informació per a començar a operar al lloc Matrix Multiply Unit.
 Si es dispara la transició Convolve(I), deixarà al lloc Convolve Ready les dades (kernel,...) per realitzar la convolució al lloc Accumulators.
 
-####L’Activació
+#### L’Activació
 La transició Activate(I) serà l’encarregada de deixar al lloc Activation Ready la informació necessària per realitzar ses funcions no lineals. 
 
-####L’escriptura
+#### L’escriptura
 La transició Write_Host_Memory(I) s’habilitarà quan totes les dades estiguin ja computades i això ho tindrem quan lloc Already Computed Data tingui una marca i quan tinguem el Host Interface disponible (tingui una marca). En aquest cas, el lloc Write to Host Ready quedarà marcat dient que està a punt per escriure si. 
 
 La transició encarregada per escriure al lloc CPU Host Memory es la DMA Controller Write to Host(T) que s’habilitarà quan ell lloc Already Computed Data tingui una marca, al lloc Unified Buffer tinguem les dades preparades (amb un token) que anteriorment li ha enviat la transició Send to Unibuffer(I) i el lloc Write to Host Ready també estigui marcat. Quan es dispari, el lloc Host Interface rebrà el token per a confirmar que es pot tornar a llegir o escriure i el lloc CPU Host Memory rebrà les dades (rebrà el token) i tornarà a estar disponible. 
 
-####La Matriu i les ALUs
+#### La Matriu i les ALUs
 La transició Systolic Control(I) s’habilitarà quan el lloc Weight FIFO Ready tingui els pesos (token), al lloc Unified Buffer tinguem les dades d’activació d’entrada (token) i al lloc Multiply Ready tenguem el tipus de multiplicació que hem de fer (token). Quan la transició es dispari el lloc Matrix Multiply Unit tindrà tota la informació necessària per començar a operar (lloc marcat).
 
 És el moment d’operar i d’això s’encarregarà la transició Compute Add & Multiply(I) que una vegada disparada marcarà el lloc Accumulators a on tindran totes les dades per poder ser tractades i d’això s’encarregarà la transició Compute Activation(T).
