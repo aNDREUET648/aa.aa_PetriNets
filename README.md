@@ -44,9 +44,9 @@ Per a poder executar la pràctica cal instal·lar l'eina PIPE 2.7 *(Platform-Ind
   - Descarregar la pràctica, Xarxa de Petri a analitzar. Per fer-ho seguim les següents pases:
    - Clicar aquest enllaç: [```TPU ARCHITECTURE v.2.3.xml```](./TPU%20ARCHITECTURE%20v.2.3.xml)
    - A la part superior dreta tenim el botó Raw, ho clicam.
-   ![Botó Raw](./imatges/tpu_petri_net_v2.3.PNG? "Versió Raw")
+   ![Botó Raw](./imatges/download1.PNG? "Versió Raw")
    - En aquesta nova finestra li donam amb la tecla dreta del ratolí i seleccionam ```Guardar como...``` (```Ctrl + S```)
-   ![Save as](./imatges/tpu_petri_net_v2.3.PNG "Guardar arxiu")
+   ![Save as](./imatges/download2.PNG "Guardar arxiu")
   - Per a l'execució de la versió *Windows*, executar s'arxiu ```pipe.bat```
   - Per a l'execució de la versió *linux*, executar ```pipe.sh```
   - Obriu l'arxiu ```TPU ARCHITECTURE v.2.3.xml```
