@@ -124,7 +124,7 @@ Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi de
 
 ->![Tokens al lloc](./imatges/average_number_of_tokens.PNG?raw=true "Nombre mitjà de tokens al lloc")<-
 
-<p align="center"> <img src="./imatges/average_number_of_tokens.PNG?raw=true" alt="Nombre mitjà de tokens al lloc"> </p>
+<p align="center"> <img src="./imatges/average_number_of_tokens.PNG "Nombre mitjà de tokens al lloc"> </p>
 
 
 
