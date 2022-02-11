@@ -128,7 +128,7 @@ Amb la finalitat de millorar l’eficàcia de les Xarxes de Petri Estocàstiques
    Per tant, es pot calcular el rendiment de cada transició (el nombre mitjà de dispars en estat estacionari), però s’ha d’adoptar una perspectiva diferent segons es tracti d’una transició temporitzada o immediata.
 
 
-El nombre mitjà de tokens a un lloc:
+La mitjana de tokens a un lloc:
 
    <p align="center"> <img src="./imatges/average_number_of_tokens.PNG"> </p>
 
@@ -141,6 +141,9 @@ La densitat de probabilitat de tokens a un lloc:
    <p align="center"> <img src="./imatges/tokens_probability_density.PNG"> </p>
    
    Com veiem a la taula, el lloc Already Computed Data és l’únic que pot arribar a tenir fins a 2 tokens amb una densitat de probabilitat de 0.09836, la resta de llocs, quan µ=0 o µ=1 té sentit parlar-ne (tenim informació). Els casos més enllà de que hi hagi 3 tokens a un lloc no són possibles pel que serà necessari visualitzar la resta de la taula (µ=30).
+   
+   A l’hora de analitzar la xarxa, la modificació del Weight a les transicions immediates,  no ha afecta en res a cap del resultats vists anteriorment a les taules de més a dalt. Aquestes transicions (immediates) modifiquen el comportament de la xarxa quan es veu modificada la seva prioritat, i és lògic, estem decidint el dispar d’una transició per a un marcat de la xarxa determinat. La prioritat d’una sèrie de transicions habilitades decidirà quina ho farà abans.
+   
 
 ---
 
@@ -157,7 +160,7 @@ Les prioritats des d'un ordinador portàtil no es visualitzen
 Selecció de les prioritats des d'un ordinador sobretaula
 
 
-Una altra cosa ha estat que si des de github descarrego directament l’arxiu .XML de la xarxa en realitat el que em descarrega es un arxiu amb contingut html que poc té que veure amb la pràctica i si ho intent obrir des de PIPE2 em dona un error de null pointer. A l’apartat requisits mínims he deixat explicat com descarregar-lo correctament per tal de que no ocorri aquesta situació.
+Una altra cosa ha estat que si des de github descarrego directament l’arxiu .XML de la xarxa en realitat el que em descarrega es un arxiu amb contingut html que poc té que veure amb la pràctica i si ho intent obrir des de PIPE2 em dona un error de null pointer. A l’apartat [Requisits mínims](#requisits-mínims) he deixat explicat com descarregar-lo correctament per tal de que no ocorri aquesta situació.
 
 ![Missatge d'error de PIPE2](./imatges/null_pointer_error.PNG?raw=true "Error d'arxiu .XML")
 Missatge d'error de PIPE
