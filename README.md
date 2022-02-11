@@ -154,7 +154,7 @@ La densitat de probabilitat de tokens a un lloc:
 
 ### Particularitats
 
-M’he adonat que l’execució de l’eina PIPE2 v2.7 a la mateixa versió del sistema operatiu (en aquest cas Windows 10) té diferents comportaments depenent del tipus d’ordinador. El cas és que l’execució damunt qualsevol dels dos portàtils que tinc, a l’hora de modificar les prioritats de les transicions immediates no és veuen, en canvi en els ordinadors de sobretaula si que funcionen.
+M’he adonat que l’execució de l’eina PIPE2 v2.7 a la mateixa versió del sistema operatiu (al meu cas Windows 10) té diferents comportaments depenent del tipus d’ordinador. El cas és que l’execució damunt qualsevol dels dos portàtils que tinc, a l’hora de modificar les prioritats de les transicions immediates és poden canviar però a cegues ja que no surt cap nombre i no saps quin valor poses, en canvi en els ordinadors de sobretaula si que funciona correctament.
 
 ![Execució des d'un ordinador portàtil](./imatges/priority_laptop.PNG?raw=true "Prioritats des d'un ordinador portàtil")
 Les prioritats des d'un ordinador portàtil no es visualitzen
