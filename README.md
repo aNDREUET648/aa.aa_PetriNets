@@ -118,40 +118,20 @@ Una vegada tenim habilitada la transició *`Compute Activation(T)`*, quan es dis
 
 ---
 
+### Resultats obtinguts
+
+Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis) a on obtindrem el nombre mitjà de tokens a un lloc:
+![Tokens al lloc](./imatges/average_number_of_tokens.PNG?raw=true "Nombre mitjà de tokens al lloc")
+
+
+
+---
+
 ### Consideracions
 
 
-El model en el que basaré la pràctica és la TPUv1 on he trobat tota la informació.
 
-Implementar una TPU completa pot ser una feina complicada. Per tal de reduir sa càrrega de treball i millorar sa viabilitat es requeriran una sèrie de simplificacions per a la TPU. Totes les simplificacions han de ser tal que, no han de perdre el concepte de disseny de la pròpia TPU.
 
-Degut a que el **Control** és la part que menys comentada, centraré el focus d'atenció de la Xarxa de Petri en aquesta direcció, i més concretament en l'execució de les instruccions que impliquen l'execució de la resta de blocs de la *TPU*.
-
-Per a mantenir una coherència amb el diagrama de blocs de l'[Enunciat](#enunciat), les etiquetes dels *Llocs* i de les *Transicions* tendran un nom similar, sino que hi haurà, que seran el mateix.
-
-A una Xarxa de Petri Estocàstica Generalitzada (GSPN) per un marcat donat, diverses transicions poden estar simultàniament habilitades, i si s'incloeixen transicions inmediates i temporitzades, només les transicions inmediates poden disparar-se perquè tenen una prioritat més alta que les temporitzades.
-
-La càrrega d'instruccions que vagin arribant es farà a través d'una transició *source* que es diu *Load Instruction* i és de tipus temporatizat (de rati=0.25). La resta de transicions són inmediates. La meva intenció hagués estat afegir dues transicions temporitzades a on es facin crides *Off-Chip* aquestes són *Load Weights* i *DMA Controller. Write to Host*, però em trob que hi ha marcats a on es solapen amb transicions inmediates i aquestes dues no s'arriben a disparar mai.
-
-El punts clau que he tret del document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) són els següents:
-   - Thus each of the preceding four general categories of instructions have separate execution hardware (with read and write host memory combined into the same unit).
-   - The Matrix Multiply Unit has not-ready signals from the Unified Buffer and the Weight FIFO that will cause the Matrix Multiply Unit to stall if the input activation or weight data are not yet available.
-   - The TPU does not have a program counter, and it has no branch instructions; instructions are sent from the host CPU.
-   - To increase instruction parallelism further, toward that end, the Read_Weights instruction follows the decoupled access/execute philosophy in that they can complete after sending its address but before the weights are fetched from Weight Memory.
-
-El tractament de cada una de les 4 categories d'instruccions és independent
-   - ```Read_Weights``` llegirà els pesos del ```Weight Memory```, els carregarà a la ```Weight FIFO``` a l'espera per començar a operar-les.
-   - ```Matrix_Multiply/Convolve``` és una instrucció de doble, i té distint comportament depenguent del que hagi de fer:
-      - *Convolve*: collirà les dades del *Unified Buffer* i les ficarà als *Accumulators* per a després operar. 
-      - *Multiply*: operació encarregada en multiplicar a la *Matrix Multiply Unit* les dades que hi ha al *Unified Buffer* amb els pesos que hi ha a la *Weight FIFO*. No entraré en detalls si les multiplicacions són de vectors, matrius o parts de la matriu.
-   - ```Activate``` realitza les funcions no lineals de la neurona artificial (ReLU, Sigmoide, tanh, etc). Les seves entrades són els *Accumulators* i la seva sortida va cap el *Unified Buffer*. Aquí és on també es realitzen les operacions necessàries d'agrupació per a les convolucions ja que està connectat amb la lògica de la funció no lineal.
-   - ```Read_Host_Memory``` i ```Write_Host_Memory``` són tractades com a una mateixa categoria, a on el *Host Interface* és el seu nexe de unió (Xarxa de Petri *Lector-Escriptor*).
-
-Mitjançant la transició *Systolic Control* controlarem que tenim carregats els pesos, les dades d'activació d'entrada al *Unified Buffer* i tenim una operació de *Multiply* a punt per executar la *Matrix Multiply Unit*.
-
-La transició *Read_Host_Memory* estarà habilitada si el llocs *CPU Host Memory* i *Host Interface* estan disponibles i tenim una instrucció al *Instruction Buffer*. Només així podrem carregar les dades d'activació d'entrada, i no serà fins que la transició *DMA Controller. Load from Host* hagi carregat aquestes dades al *Unified Buffer* que no tornarem a tenir el *Host Interface* disponible.
-
-Per una altra banda *Write_Host Memory* estarà habilitada quan el *Host Interface* estigui disponible, tenguem una instrucció al *Instruction Buffer* i s'hagin tractat les dades a *Compute. Activation*. A partir d'aquest *Host Interface* estarà ocupat i no tornarà estar lliure fins al moment d'escriure les dades al *CPU Host Memory* mitjançant la transició *DMA Controller. Write to Host* i només passarà si són enviades al *Unified Buffer* a través de la transició *Send to Unibuffer*.
 
  
 
