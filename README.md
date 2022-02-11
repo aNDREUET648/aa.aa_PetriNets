@@ -152,6 +152,7 @@ M’he adonat que l’execució de l’eina PIPE2 v2.7 a la mateixa versió del 
 Les prioritats des d'un ordinador portàtil no es visualitzen
 
 
+
 ![Execució des d'un sobretaula](./imatges/Priority.PNG?raw=true "Prioritats des d'un sobretaula")
 Selecció de les prioritats des d'un ordinador sobretaula
 
