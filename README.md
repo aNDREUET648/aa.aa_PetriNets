@@ -120,15 +120,19 @@ Una vegada tenim habilitada la transició *`Compute Activation(T)`*, quan es dis
 
 ### Resultats obtinguts
 
-Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis) a on obtindrem el nombre mitjà de tokens a un lloc:
+Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis).
 
-->![Tokens al lloc](./imatges/average_number_of_tokens.PNG?raw=true "Nombre mitjà de tokens al lloc")<-
+El nombre mitjà de tokens a un lloc:
 
-<p align="center"> <img src="./imatges/average_number_of_tokens.PNG "Nombre mitjà de tokens al lloc"> </p>
+   <p align="center"> <img src="./imatges/average_number_of_tokens.PNG"> </p>
 
+El rendiment de les transicions temporitzades:
 
+   <p align="center"> <img src="./imatges/throughput_timed_transitions.PNG"> </p>
 
+La densitat de probabilitat de tokens a un lloc:
 
+   <p align="center"> <img src="./imatges/tokens_probability_density.PNG"> </p>
 
 ---
 
