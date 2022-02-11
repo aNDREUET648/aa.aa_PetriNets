@@ -120,7 +120,13 @@ Una vegada tenim habilitada la transició *`Compute Activation(T)`*, quan es dis
 
 ### Resultats obtinguts
 
-Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis).
+Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi a on obtindrem el nombre mitjà de tokens a un lloc:
+Amb la finalitat de millorar l’eficàcia de les Xarxes de Petri Estocàstiques (SPN), apareixen les Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis). A més de les transicions temporitzades, s’introdueixen les transicions immediates. Aquest és el nostre cas i per a veure els resultats faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis).
+
+Com a  el temps de permanència en les marques en les que s’habilita almenys una transició immediata, no segueix una distribució exponencial. Aquestes marques canvien immediatament (es disparen amb una retard 0). No obstant això, la distribució de temps de permanència del procés a les marques a on només s’habiliten transicions temporitzades és exponencial.
+
+Per tant, es pot calcular el rendiment de cada transició (el nombre mitjà de dispars en estat estacionari), però s’ha d’adoptar una perspectiva diferent segons es tracti d’una transició temporitzada o immediata.
+
 
 El nombre mitjà de tokens a un lloc:
 
