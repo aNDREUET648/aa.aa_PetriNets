@@ -10,7 +10,7 @@
 - [Xarxa de Petri](#xarxa-de-petri)
 - [El model](#el-model)
 - [Funcionament](#funcionament)
-- [Consideracions](#consideracions)
+- [Particularitats](#particularitats)
 - [Bibliografia i Eines](#bibliografia-i-eines)
 
 ### Introducció
@@ -142,13 +142,23 @@ La densitat de probabilitat de tokens a un lloc:
 
 ---
 
-### Consideracions
+### Particularitats
+
+M’he adonat que l’execució de l’eina PIPE2 v2.7 a la mateixa versió del sistema operatiu (en aquest cas Windows 10) té diferents comportaments depenent del tipus d’ordinador. El cas és que l’execució damunt qualsevol dels dos portàtils que tinc, a l’hora de modificar les prioritats de les transicions immediates no és veuen, en canvi en els ordinadors de sobretaula si que funcionen.
+
+<p align="center"> <img src="./imatges/priority_laptop.PNG"> </p>
+Execució des d'un ordinador portàtil
+
+<p align="center"> <img src="./imatges/Priority.PNG"> </p>
+Execució des d'un ordinador sobretaula
+
+Una altra cosa ha estat que si des de github descarrego directament l’arxiu .XML de la xarxa en realitat el que em descarrega es un arxiu amb contingut html que poc té que veure amb la pràctica i si ho intent obrir des de PIPE2 em dona un error de null pointer. A l’apartat requisits mínims he deixat explicat com descarregar-lo correctament per tal de que no ocorri aquesta situació.
 
 
+<p align="center"> <img src="./imatges/null_pointer_error.PNG"> </p>
+Missatge d'error de PIPE
 
 
-
- 
 
 ---
 
