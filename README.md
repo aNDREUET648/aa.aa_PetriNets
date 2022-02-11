@@ -41,7 +41,12 @@ El document [Arquitectura de la TPU](./DSA-TPU_architecture.pdf) recull tota la 
 
 Per a poder executar la pràctica cal instal·lar l'eina PIPE 2.7 *(Platform-Independent Petri net Editor)* i seguir les següents pases:
   - Descarregar i descomprimir l'arxiu comprimit *.zip* [```Pipe 2.7```](./pipe2.7/pipe2.7%5B20131028%5D.zip).  
-  - Descarregar també l'arxiu [```TPU ARCHITECTURE v.2.3.xml```](./TPU%20ARCHITECTURE%20v.2.3.xml). Aquesta és la pràctica en qüestió. La Xarxa de Petri a analitzar. Podeu clicar aquest enllaç o adalt de tot teniu l'arxiu disponible també per a descarregar.
+  - Descarregar la pràctica, Xarxa de Petri a analitzar. Per fer-ho seguim les següents pases:
+   - Clicar aquest enllaç: [```TPU ARCHITECTURE v.2.3.xml```](./TPU%20ARCHITECTURE%20v.2.3.xml)
+   - A la part superior dreta tenim el botó Raw, ho clicam.
+   ![Botó Raw](./imatges/tpu_petri_net_v2.3.PNG? "Versió Raw")
+   - En aquesta nova finestra li donam amb la tecla dreta del ratolí i seleccionam ```Guardar como...``` (```Ctrl + S```)
+   ![Save as](./imatges/tpu_petri_net_v2.3.PNG "Guardar arxiu")
   - Per a l'execució de la versió *Windows*, executar s'arxiu ```pipe.bat```
   - Per a l'execució de la versió *linux*, executar ```pipe.sh```
   - Obriu l'arxiu ```TPU ARCHITECTURE v.2.3.xml```
