@@ -144,6 +144,12 @@ La densitat de probabilitat de tokens a un lloc:
    
    A l’hora de analitzar la xarxa, la modificació del Weight a les transicions immediates,  no ha afecta en res a cap del resultats vists anteriorment a les taules de més a dalt. Aquestes transicions (immediates) modifiquen el comportament de la xarxa quan es veu modificada la seva prioritat, i és lògic, estem decidint el dispar d’una transició per a un marcat de la xarxa determinat. La prioritat d’una sèrie de transicions habilitades decidirà quina ho farà abans.
    
+   Mirant els nombres obtinguts és fàcil adonar-se que:
+   -	El rendiment de la transició temporitzada DMA Controller. Write to Host (0.19672) està relacionat amb els llocs adjacents.
+   -	La mitjana de tokens als llocs Write to Host Ready i CPU Host Memory, és la mateixa (0.19672).
+   -	Aquesta mitjana és exactament la densitat de probabilitat d’haver un token al lloc (µ=1). Per tant, a la taula de densitat de probabilitat de tokens a un lloc apareixeran aquest nombre.
+   -	Aquest nombre també coincidirà (i és normal) amb la densitat de probabilitat de haver un token al lloc Already Computed Data. Totes les dades que ja estan computades s’escriuran sempre al CPU Host i no li quedarà més remei que passar a través de la transició DMA Controller. Write to Host.
+   -	Un altre semblança és la densitat de probabilitat d’un token al lloc Matrix Multiply Unit és la mateixa que al lloc Multiply Ready i també és evident.   
 
 ---
 
@@ -177,6 +183,7 @@ Missatge d'error de PIPE
   - [Petri Net Theory and the Modeling of Systems](https://www.amazon.es/Petri-Net-Theory-Modeling-Systems/dp/1080591176) - Chapters 1, 2 and 3. James L. Peterson
   - Documentació de classe del Tema 4 - Arquitectures de Domini Específiques - Assignatura. Arquitectures Avançades. Cati Lladó
   - [PIPE v2.5: a Petri Net Tool for Performance Modeling](https://www.doc.ic.ac.uk/~wjk/publications/bonet-llado-knottenbelt-puijaner-clei-2007.pdf) - P. Bonet, C. Lladó, R. Puigjaner and W. Knottenbelt
+  - [Extensiones de la redes de Petri: Temporización](https://www.ctr.unican.es/asignaturas/mc_procon/doc/petri_4.pdf) - Programación Concurrente. Universidad de Cantabria. 2012. Mercedes Granda
 
 
 ---
