@@ -122,7 +122,7 @@ Una vegada tenim habilitada la transició *`Compute Activation(T)`*, quan es dis
 
 Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis) a on obtindrem el nombre mitjà de tokens a un lloc:
 
-![Tokens al lloc](./imatges/average_number_of_tokens.PNG?raw=true "Nombre mitjà de tokens al lloc")
+->![Tokens al lloc](./imatges/average_number_of_tokens.PNG?raw=true "Nombre mitjà de tokens al lloc")<-
 
 <p align="center"> <img src="./imatges/average_number_of_tokens.PNG" alt="Nombre mitjà de tokens al lloc"> </p>
 
