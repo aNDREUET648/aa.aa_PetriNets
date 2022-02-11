@@ -120,12 +120,11 @@ Una altra forma d’arribar al lloc *`Accumulators`* com ja he comentat a l’ap
 
 ### Resultats obtinguts
 
-   Per a veure resultats de la xarxa de Petri faig servir el mòdul d’anàlisi a on obtindrem el nombre mitjà de tokens a un lloc:
-Amb la finalitat de millorar l’eficàcia de les Xarxes de Petri Estocàstiques (SPN), apareixen les Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis). A més de les transicions temporitzades, s’introdueixen les transicions immediates. Aquest és el nostre cas i per a veure els resultats faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis).
+   Amb la finalitat de millorar l’eficàcia de les Xarxes de Petri Estocàstiques (SPN), apareixen les Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis), a més de les transicions temporitzades, s’introdueixen les transicions immediates. Aquest és el nostre cas i per a veure els resultats faig servir el mòdul d’anàlisi de Xarxes de Petri Estocàstiques Generalitzades (GSPN Analysis).
 
    Com a  el temps de permanència en les marques en les que s’habilita almenys una transició immediata, no segueix una distribució exponencial. Aquestes marques canvien immediatament (es disparen amb una retard 0). No obstant això, la distribució de temps de permanència del procés a les marques a on només s’habiliten transicions temporitzades és exponencial.
 
-   Per tant, es pot calcular el rendiment de cada transició (el nombre mitjà de dispars en estat estacionari), però s’ha d’adoptar una perspectiva diferent segons es tracti d’una transició temporitzada o immediata.
+   Per tant, es pot calcular el rendiment de cada transició (el nombre mitjà de dispars en estat estacionari), però s’ha d’adoptar una perspectiva diferent segons es tracti d’una transició temporitzada o immediata. 
 
 
 La mitjana de tokens a un lloc:
@@ -140,16 +139,16 @@ La densitat de probabilitat de tokens a un lloc:
 
    <p align="center"> <img src="./imatges/tokens_probability_density.PNG"> </p>
    
-   Com veiem a la taula, el lloc Already Computed Data és l’únic que pot arribar a tenir fins a 2 tokens amb una densitat de probabilitat de 0.09836, la resta de llocs, quan µ=0 o µ=1 té sentit parlar-ne (tenim informació). Els casos més enllà de que hi hagi 3 tokens a un lloc no són possibles pel que serà necessari visualitzar la resta de la taula (µ=30).
+   Com veiem a la taula, el lloc Already Computed Data és l’únic que pot arribar a tenir fins a 2 tokens amb una densitat de probabilitat de 0.09836, la resta de llocs, quan µ=0 o µ=1 té sentit parlar-ne (tenim informació). Els llocs a on hi hagi 3 tokens o més no són possibles pel que no serà necessari visualitzar la resta de la taula (fins a µ=30).
    
-   A l’hora de analitzar la xarxa, la modificació del Weight a les transicions immediates,  no ha afecta en res a cap del resultats vists anteriorment a les taules de més a dalt. Aquestes transicions (immediates) modifiquen el comportament de la xarxa quan es veu modificada la seva prioritat, i és lògic, estem decidint el dispar d’una transició per a un marcat de la xarxa determinat. La prioritat d’una sèrie de transicions habilitades decidirà quina ho farà abans.
+   A l’hora de analitzar la xarxa, la modificació del Weight a les transicions immediates, no ha afecta en res a cap del resultats vists anteriorment a les taules de més a dalt. Aquestes transicions (immediates) modifiquen el comportament de la xarxa quan es veu modificada la seva prioritat, i és lògic, estem decidint el dispar d’una transició per a un marcat de la xarxa determinat. La prioritat d’una sèrie de transicions habilitades decidirà quina ho farà abans.
    
    Mirant els nombres obtinguts és fàcil adonar-se que:
-   -	El rendiment de la transició temporitzada DMA Controller. Write to Host (0.19672) està relacionat amb els llocs adjacents.
-   -	La mitjana de tokens als llocs Write to Host Ready i CPU Host Memory, és la mateixa (0.19672).
+   -	El rendiment de la transició temporitzada *`DMA Controller. Write to Host`* (0.19672) està relacionat amb els llocs adjacents.
+   -	La mitjana de tokens als llocs *`Write to Host Ready`* i *`CPU Host Memory`*, és la mateixa (0.19672).
    -	Aquesta mitjana és exactament la densitat de probabilitat d’haver un token al lloc (µ=1). Per tant, a la taula de densitat de probabilitat de tokens a un lloc apareixeran aquest nombre.
-   -	Aquest nombre també coincidirà (i és normal) amb la densitat de probabilitat de haver un token al lloc Already Computed Data. Totes les dades que ja estan computades s’escriuran sempre al CPU Host i no li quedarà més remei que passar a través de la transició DMA Controller. Write to Host.
-   -	Un altre semblança és la densitat de probabilitat d’un token al lloc Matrix Multiply Unit és la mateixa que al lloc Multiply Ready i també és evident.   
+   -	Aquest nombre també coincidirà (i és normal) amb la densitat de probabilitat de haver un token al lloc *`Already Computed Data`*. Totes les dades que ja estan computades s’escriuran sempre al lloc *`CPU Host Memory`* i no li quedarà més remei que passar a través de la transició *`DMA Controller. Write to Host`*.
+   -	Un altre semblança és la densitat de probabilitat d’un token al lloc *`Matrix Multiply Unit`* és la mateixa que al lloc *`Multiply Ready`* i també és evident.   
 
 ---
 
